@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Projects</h1><hr>
+    <div class="col-md-9">
+        {% for post in posts %}
+        <h3>{{ post }}</h3>
+        {{ post.text|linebreaks }}
+        <p><a class="btn btn-primary btn-sm" href={{ post.link }}>{{ post.link_title }}</a></p>
+        <br><hr>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

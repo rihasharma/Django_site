@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>About</h1><hr>
+    <div class="col-md-9">
+        {% for post in posts %}
+        {{ post.text|linebreaks }}
+        <div class="col-sm-5" >
+        <p><strong>Email: </strong>{{ post.email }}</p>
+
+        <p><a class="btn btn-block btn-social btn-linkedin" href={{ post.linkedin }}>
+        <span class="fa fa-linkedin"></span>My LinkedIn
+        </a></p>
+
+        <p><a class="btn btn-block btn-social btn-github" href={{ post.github }}>
+        <span class="fa fa-github"></span>My GitHub
+        </a></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
